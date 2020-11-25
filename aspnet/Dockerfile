@@ -1,4 +1,3 @@
-ARG REPO=mcr.microsoft.com/dotnet/runtime
 ARG ASPNET_VERSION=5.0.0
 
 # Installer image
@@ -14,7 +13,7 @@ RUN curl -SL --output aspnetcore.tar.gz https://dotnetcli.azureedge.net/dotnet/a
 
 
 # ASP.NET Core image
-FROM runtime:1.0
+FROM modelerp/runtime:5.0.0-bionic-amd64
 ARG ASPNET_VERSION
 
 ENV ASPNET_VERSION $ASPNET_VERSION

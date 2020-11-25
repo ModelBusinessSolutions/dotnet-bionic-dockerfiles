@@ -14,7 +14,7 @@ RUN curl -SL --output dotnet.tar.gz https://dotnetcli.azureedge.net/dotnet/Runti
 
 
 # .NET runtime image
-FROM runtimedeps:1.0
+FROM modelerp/runtime-deps:5.0.0-bionic-amd64
 ARG DOTNET_VERSION
 
 ENV DOTNET_VERSION $DOTNET_VERSION

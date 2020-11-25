@@ -1,5 +1,5 @@
-ARG REPO=mcr.microsoft.com/dotnet/aspnet
-FROM aspnet:1.0
+ARG REPO=modelerp/aspnet
+FROM $REPO:5.0.0-bionic-amd64
 
 ENV \
     # Unset ASPNETCORE_URLS from aspnet base image
@@ -10,7 +10,7 @@ ENV \
     # Skip extraction of XML docs - generally not useful within an image/container - helps performance
     NUGET_XMLDOC_MODE=skip \
     # PowerShell telemetry for docker image usage
-    PPOWERSHELL_DISTRIBUTION_CHANNEL=PSDocker-DotnetCoreSDK-Ubuntu-18.04
+    POWERSHELL_DISTRIBUTION_CHANNEL=PSDocker-DotnetCoreSDK-Ubuntu-18.04
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
